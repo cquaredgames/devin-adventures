@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=4 uid="uid://c0xtt62wgocl3"]
 
-[ext_resource type="Texture2D" uid="uid://b4edy0mgqk7uc" path="res://Assets/Sprites/tiles_1.png" id="1_3tfi2"]
-[ext_resource type="PackedScene" uid="uid://cn5l1c04bmpop" path="res://Assets/Scenes/player.tscn" id="3_1rfna"]
+[ext_resource type="Texture2D" uid="uid://b4edy0mgqk7uc" path="res://Assets/Sprites/tiles_1.png" id="1_uwtvt"]
+[ext_resource type="PackedScene" uid="uid://cn5l1c04bmpop" path="res://Assets/Scenes/player.tscn" id="2_y1uui"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0w8l"]
-texture = ExtResource("1_3tfi2")
+texture = ExtResource("1_uwtvt")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -312,7 +312,7 @@ terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_r0w8l")
 
-[node name="Area1" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
@@ -325,7 +325,7 @@ tile_set = SubResource("TileSet_s2eb4")
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("3_1rfna")]
+[node name="Player" parent="." instance=ExtResource("2_y1uui")]
 collision_mask = 768
 speed = 20.0
 jump_power = 30.0

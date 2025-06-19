@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Devin Adventures"
-run/main_scene="res://Assets/Scenes/Areas/area1.tscn"
+run/main_scene="res://Assets/Scenes/Levels/level_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
