@@ -21,3 +21,4 @@ func move_tween():
 	else:
 		tween.tween_property(
 			path_follow_2d, "progress_ratio", 0.0, 0.0).set_ease(ease_type).set_trans(transition)
+	tween.bind_node(self)
