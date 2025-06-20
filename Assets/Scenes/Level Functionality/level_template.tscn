@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://c0xtt62wgocl3"]
+[gd_scene load_steps=6 format=4 uid="uid://c0xtt62wgocl3"]
 
 [ext_resource type="Texture2D" uid="uid://b4edy0mgqk7uc" path="res://Assets/Sprites/tiles_1.png" id="1_uwtvt"]
-[ext_resource type="PackedScene" uid="uid://cn5l1c04bmpop" path="res://Assets/Scenes/player.tscn" id="2_y1uui"]
+[ext_resource type="PackedScene" uid="uid://c40elyejo73ms" path="res://Assets/Scenes/Level Functionality/level_exit.tscn" id="2_mmg42"]
+[ext_resource type="PackedScene" uid="uid://do760awnia1ht" path="res://Assets/Scenes/energy_cell.tscn" id="4_du2pb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0w8l"]
 texture = ExtResource("1_uwtvt")
@@ -314,6 +315,9 @@ sources/0 = SubResource("TileSetAtlasSource_r0w8l")
 
 [node name="Level" type="Node2D"]
 
+[node name="PlayerStartPosition" type="Node2D" parent="." groups=["player_start_position"]]
+position = Vector2(11, -29)
+
 [node name="TileMapLayers" type="Node2D" parent="."]
 
 [node name="OneWayGroundTileMapLayer" type="TileMapLayer" parent="TileMapLayers"]
@@ -325,7 +329,19 @@ tile_set = SubResource("TileSet_s2eb4")
 
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_y1uui")]
-collision_mask = 768
-speed = 20.0
-jump_power = 30.0
+[node name="LevelExit" parent="." instance=ExtResource("2_mmg42")]
+position = Vector2(45, -10)
+
+[node name="EnergyCells" type="Node2D" parent="."]
+
+[node name="EnergyCell1" parent="EnergyCells" instance=ExtResource("4_du2pb")]
+position = Vector2(-60, -7)
+
+[node name="EnergyCell2" parent="EnergyCells" instance=ExtResource("4_du2pb")]
+position = Vector2(-45, -7)
+
+[node name="EnergyCell3" parent="EnergyCells" instance=ExtResource("4_du2pb")]
+position = Vector2(-31, -7)
+
+[node name="EnergyCell4" parent="EnergyCells" instance=ExtResource("4_du2pb")]
+position = Vector2(-17, -7)

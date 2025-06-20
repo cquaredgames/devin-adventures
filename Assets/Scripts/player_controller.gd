@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 class_name PlayerController
 
-@export var speed = 10.0
-@export var jump_power = 10.0
+@export var speed = 15.0
+@export var jump_power = 30.0
+@export var camera : Camera2D
 
 var jump_multiplier = -10.0
 var speed_multiplier = 10.0
@@ -37,3 +38,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 
 	move_and_slide()
+
+
+func teleport_to_location(new_location):
+	camera.position_smoothing_enabled = false
+	position = new_location
+	await get_tree().physics_frame
+	camera.position_smoothing_enabled = true

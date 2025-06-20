@@ -99,8 +99,10 @@ _data = {
 radius = 5.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera") groups=["player"]]
+collision_mask = 66304
 script = ExtResource("1_omxlc")
+camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -15)
@@ -123,6 +125,7 @@ autoplay = "idle"
 speed_scale = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator"]
+z_index = 10
 position = Vector2(0, -8)
 texture = ExtResource("2_4vp4p")
 region_enabled = true

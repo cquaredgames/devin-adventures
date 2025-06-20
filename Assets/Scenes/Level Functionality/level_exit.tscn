@@ -1,16 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c40elyejo73ms"]
+[gd_scene load_steps=4 format=3 uid="uid://c40elyejo73ms"]
 
 [ext_resource type="Texture2D" uid="uid://dbf1h65a77ubf" path="res://Assets/Sprites/portal.png" id="1_8084e"]
+[ext_resource type="Script" path="res://Assets/Scripts/level_exit.gd" id="1_r7f8y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwkjv"]
 radius = 8.06226
 
-[node name="LevelExit" type="Area2D"]
+[node name="LevelExit" type="Area2D" node_paths=PackedStringArray("sprite") groups=["level_exits"]]
+collision_layer = 65536
+script = ExtResource("1_r7f8y")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("1_8084e")
 region_enabled = true
 region_rect = Rect2(22, 0, 22, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qwkjv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

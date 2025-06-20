@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://hegjk7eq8rjs"]
+
+[ext_resource type="Texture2D" uid="uid://onakca5tfdt6" path="res://Assets/Sprites/energy_cell.png" id="1_ng87v"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnergyCellTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ng87v")
+stretch_mode = 4
+
+[node name="EnergyCellLabel" type="Label" parent="EnergyCellTexture"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PortalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

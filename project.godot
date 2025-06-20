@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Devin Adventures"
-run/main_scene="res://Assets/Scenes/Levels/level_test.tscn"
+run/main_scene="res://Assets/Scenes/gameplay.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Assets/Scripts/game_manager.gd"
 
 [display]
 
@@ -57,8 +61,9 @@ jump_down={
 2d_physics/layer_1="player"
 2d_physics/layer_9="ground"
 2d_physics/layer_10="one_way_ground"
+2d_physics/layer_17="transitions"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(6.73831e-06, 0.709272, 0.940823, 1)
+environment/defaults/default_clear_color=Color(1.23215e-05, 0.565177, 0.753071, 1)
