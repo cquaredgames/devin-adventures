@@ -1,6 +1,6 @@
 extends Node
 
-var starting_level = 1
+var STARTING_LEVEL = 1
 var current_level = 1
 var level_path = "res://Assets/Scenes/Levels/"
 
@@ -13,18 +13,20 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	level_container = get_tree().get_first_node_in_group("level_container")
 	hud = get_tree().get_first_node_in_group("hud")
-	#load_level(starting_level)
+	#load_level(STARTING_LEVEL)
 
 func reset_gameplay_components():
 	player = get_tree().get_first_node_in_group("player")
 	level_container = get_tree().get_first_node_in_group("level_container")
 	hud = get_tree().get_first_node_in_group("hud")
+	
+	current_level = STARTING_LEVEL
 
 func next_level():
 	current_level += 1
 	load_level(current_level)
 	
-func load_level(level_number):
+func load_level(level_number=STARTING_LEVEL):
 	var level_full_path = level_path + "/level_" + str(level_number) + ".tscn"
 	var scene = load(level_full_path) as PackedScene
 	

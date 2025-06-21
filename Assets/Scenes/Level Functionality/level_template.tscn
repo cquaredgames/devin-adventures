@@ -330,6 +330,7 @@ tile_set = SubResource("TileSet_s2eb4")
 [node name="MovingPlatforms" type="Node2D" parent="."]
 
 [node name="LevelExit" parent="." instance=ExtResource("2_mmg42")]
+z_index = 5
 position = Vector2(45, -10)
 
 [node name="EnergyCells" type="Node2D" parent="."]
