@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://82rurabx3cli"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/main_menu.gd" id="1_h120c"]
+[ext_resource type="Script" uid="uid://gnm3yfh7jor5" path="res://Assets/Scripts/main_menu.gd" id="1_h120c"]
 [ext_resource type="PackedScene" uid="uid://bdwaq5y0rt6i4" path="res://Assets/Scenes/gameplay.tscn" id="2_0ghr2"]
 [ext_resource type="FontFile" uid="uid://bjwhk7n5skv0d" path="res://Assets/Fonts/Kenney Mini.ttf" id="2_dp3td"]
 

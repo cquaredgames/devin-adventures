@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cn5l1c04bmpop"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/player_controller.gd" id="1_omxlc"]
+[ext_resource type="Script" uid="uid://da328xpau4mrl" path="res://Assets/Scripts/player_controller.gd" id="1_omxlc"]
 [ext_resource type="Texture2D" uid="uid://b84ubon2otcxs" path="res://Assets/Sprites/player.png" id="2_4vp4p"]
-[ext_resource type="Script" path="res://Assets/Scripts/player_animator.gd" id="2_ec5h1"]
+[ext_resource type="Script" uid="uid://vhhohnyf00uk" path="res://Assets/Scripts/player_animator.gd" id="2_ec5h1"]
 
 [sub_resource type="Animation" id="Animation_4nr2x"]
 length = 0.001
@@ -88,11 +88,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5llh5"]
 _data = {
-"RESET": SubResource("Animation_4nr2x"),
-"fall": SubResource("Animation_phepr"),
-"idle": SubResource("Animation_mav0t"),
-"jump": SubResource("Animation_5k41y"),
-"move": SubResource("Animation_vf2g6")
+&"RESET": SubResource("Animation_4nr2x"),
+&"fall": SubResource("Animation_phepr"),
+&"idle": SubResource("Animation_mav0t"),
+&"jump": SubResource("Animation_5k41y"),
+&"move": SubResource("Animation_vf2g6")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tmtjb"]
@@ -109,6 +109,8 @@ offset = Vector2(0, -15)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_ec5h1")
@@ -119,7 +121,7 @@ sprite = NodePath("Sprite2D")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_5llh5")
+&"": SubResource("AnimationLibrary_5llh5")
 }
 autoplay = "idle"
 speed_scale = 1.5
