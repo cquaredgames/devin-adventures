@@ -6,6 +6,9 @@ class_name PlayerController
 @export var jump_power = 30.0
 @export var camera : Camera2D
 
+var bounce_timer := 0.0
+@export var bounce_duration := 0.5
+
 var jump_multiplier = -10.0
 var speed_multiplier = 10.0
 var direction = 0
@@ -22,6 +25,11 @@ func _input(event: InputEvent) -> void:
 		set_collision_mask_value(10, true)
 	
 func _physics_process(delta: float) -> void:
+	if bounce_timer > 0:
+		bounce_timer -= delta
+		move_and_slide()
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta	
@@ -32,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_left", "move_right")
+	
 	if direction:
 		velocity.x = direction * speed * speed_multiplier
 	else:
@@ -39,6 +48,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func apply_bounce(force: Vector2):
+	velocity = force
+	bounce_timer = bounce_duration
 
 func teleport_to_location(new_location):
 	camera.position_smoothing_enabled = false

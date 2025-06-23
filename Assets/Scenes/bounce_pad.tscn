@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jjrv0lmrsn2"]
+
+[ext_resource type="Script" uid="uid://c3cb3p1gpbupu" path="res://Assets/Scripts/bounce_pad.gd" id="1_4vugy"]
+[ext_resource type="Texture2D" uid="uid://b88adcmjomt1j" path="res://Assets/Sprites/bounce_pad.png" id="1_lsw07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vugy"]
+size = Vector2(16, 5)
+
+[node name="BouncePad" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_4vugy")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lsw07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_4vugy")
+debug_color = Color(0.221891, 0.367383, 0.397102, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
