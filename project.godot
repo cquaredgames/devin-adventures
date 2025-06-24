@@ -22,7 +22,6 @@ GameManager="*res://Assets/Scripts/game_manager.gd"
 
 [display]
 
-window/size/mode=4
 window/stretch/mode="viewport"
 
 [dotnet]
