@@ -10,9 +10,7 @@ var player : PlayerController
 var hud : HUD
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("player")
-	level_container = get_tree().get_first_node_in_group("level_container")
-	hud = get_tree().get_first_node_in_group("hud")
+	reset_gameplay_components()
 	#load_level(STARTING_LEVEL)
 
 func reset_gameplay_components():
